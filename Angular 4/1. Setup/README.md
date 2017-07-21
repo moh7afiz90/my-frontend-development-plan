@@ -2,7 +2,7 @@
 
 
 
-##### What
+#### Installation
 ```bash
 npm install -g @angular/cli
 ```
