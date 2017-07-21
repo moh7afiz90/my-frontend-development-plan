@@ -8,7 +8,7 @@
 - Pieces of UI.
 - Include a clas and templete.
 - Bind from class -> template and class <- template
-<img src="AppComponents.png" />
+<img src="AppComponent.png" />
  
 #### Why use components ?
 - Code organization.
