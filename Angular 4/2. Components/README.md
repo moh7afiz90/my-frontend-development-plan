@@ -110,5 +110,127 @@ Arrays of Any | `myAnyArray:any[] = [1,2,'hello']`
 Tuple | `myTuple:[string, number] = ['hello',2]`
 unusable | `unusable:void = undefined`
 undefined | `u: undefined = undefined`
-null | null = null;
+null | `null = null;`
 
+### Objects & Interface
+
+```TypeScript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 
+  `
+    <h1>{{ name }} is {{  }} years old</h1>
+    <h2>My name is {{ person.firstName }} {{person.lastName}}</h2>
+  `
+
+})
+export class AppComponent { 
+    customer:{id:number, name:string, email:string} //<- instead of type this object here we can create an interface
+
+    constructor(){
+      this.cutomer = {
+        id: 1,
+        name: 'John Doe',
+        email: 'john@gmail.com'
+      }
+    }
+
+}
+
+```
+
+With Interface included in the same component
+
+```TypeScript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 
+  `
+    <h1>{{ name }} is {{  }} years old</h1>
+    <h2>My name is {{ person.firstName }} {{person.lastName}}</h2>
+  `
+
+})
+export class AppComponent { 
+    customer: Customer //<- instead of type this object here we can create an interface
+
+    constructor(){
+      this.cutomer = {
+        id: 1,
+        name: 'John Doe',
+        email: 'john@gmail.com'
+      }
+    }
+
+    interface Customer { // <- interface
+        id:number, 
+        name:string, 
+        email:string
+    }
+}
+
+```
+Or we make a seperate file for the interface (customer.ts)
+
+```TypeScript
+export interface Customer {
+        id:number, 
+        name:string, 
+        email:string
+}
+```
+
+and import it in the component
+
+```TypeScript
+import { Component } from '@angular/core';
+import { Customer } from './customer'
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 
+  `
+    <h1>Hello Wolrd</h1>
+  `
+
+})
+export class AppComponent { 
+    customer: Customer 
+    customers: Customer[];
+
+    constructor(){
+      this.cutomer = {
+        id: 0,
+        name: 'John Doe',
+        email: 'john@gmail.com'
+      }
+
+      //we can use array as well
+
+      this.customers = [
+        {
+          id: 0,
+          name: 'John Doe',
+          email: 'john@gmail.com'
+        },
+        {
+          id: 1,
+          name: 'Brad Jow',
+          email: 'jow@gmail.com'
+        },
+        {
+          id: 2,
+          name: 'Stevie Brad',
+          email: 'Brad@gmail.com'
+        }
+      ]
+    }
+
+   
+}
+
+```
