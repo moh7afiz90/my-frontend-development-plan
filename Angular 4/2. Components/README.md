@@ -48,7 +48,7 @@ export class AppModule { }
 
 ### app.component.ts (default)
 - It is something like a registry for rest of the application.
-- consturctor
+
 ```TypeScript
 import { Component } from '@angular/core';
 
@@ -87,9 +87,7 @@ export class AppComponent {
   }
 }
 
-constructor() {
-      
-    } //<- baiscally a function run when a component is initialize
+constructor() { } //<- baiscally a function run when a component is initialize
 
     hasBirthday(){
       this.age += 1; //<- it is not going to run becasue we have not called it in the constructor 
@@ -99,3 +97,18 @@ constructor() {
 ```
 
 ### Adding types to properties
+
+Data Type  | Usage
+---       | ---
+String | `name:string = 'John Doe'`
+Number | `age:number = 35`
+Boolean | `hasChildren:bool = true`
+Any | `city:any = 'Bosten'`
+Arrays of Number | `myNumbersArray:number[] = [1,2,3]`
+Arrays of String | `myStringsArray:string[] = ['hello','world']`
+Arrays of Any | `myAnyArray:any[] = [1,2,'hello']`
+Tuple | `myTuple:[string, number] = ['hello',2]`
+unusable | `unusable:void = undefined`
+undefined | `u: undefined = undefined`
+null | null = null;
+
