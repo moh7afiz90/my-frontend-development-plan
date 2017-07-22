@@ -64,7 +64,7 @@ export class AppComponent {
 ### Data Binding and String Interpolation
 - We can take data and bind them dynamically to the template by using 
 - {{  }} called string interplation
-- Make sure to use backticks (` `) to if you want to use your template inside the component
+- Make sure to use backticks `` to if you want to use your template inside the component
 
 ```TypeScript
 import { Component } from '@angular/core';
@@ -234,3 +234,5 @@ export class AppComponent {
 }
 
 ```
+
+#### ['Events & Forms']() 
