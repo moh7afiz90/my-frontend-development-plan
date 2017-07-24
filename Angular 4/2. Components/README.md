@@ -3,13 +3,13 @@
 
 ## Introduction
 #### What is component ?
- 
+
 - The bulk of an Angular application.
 - Pieces of UI.
 - Include a clas and templete.
 - Bind from class -> template and class <- template
 <img src="AppComponent.png" style=""/>
- 
+
 #### Why use components ?
 - Code organization.
 - Break up the UI.
@@ -58,27 +58,27 @@ import { Component } from '@angular/core';
   styleUrls: [./app.component.css]
 
 })
-export class AppComponent { 
-  
+export class AppComponent {
+
 ```
 ### Data Binding and String Interpolation
-- We can take data and bind them dynamically to the template by using 
+- We can take data and bind them dynamically to the template by using
 - {{  }} called string interplation
 - Make sure to use backticks `` to if you want to use your template inside the component
-
+- f
 ```TypeScript
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 
+  templateUrl:
   `
     <h1>{{ name }} is {{  }} years old</h1>
     <h2>My name is {{ person.firstName }} {{person.lastName}}</h2>
   `
 
 })
-export class AppComponent { 
+export class AppComponent {
   name = 'John Doe!';
   age = 35;
   person = {
@@ -90,7 +90,7 @@ export class AppComponent {
 constructor() { } //<- baiscally a function run when a component is initialize
 
     hasBirthday(){
-      this.age += 1; //<- it is not going to run becasue we have not called it in the constructor 
+      this.age += 1; //<- it is not going to run becasue we have not called it in the constructor
     }
 }
 
@@ -112,6 +112,18 @@ unusable | `unusable:void = undefined`
 undefined | `u: undefined = undefined`
 null | `null = null;`
 
+### Data Binding
+
+<img src="dataBinding.png" style=""/>
+
+- [(ngModel)]="property" two way dataBinding
+<!-- Make Sure to import {FormsModule} from '@angular/forms'; -->
+- {{  }} string Interpolation
+- (event)="" Events binding
+<!-- ex (click)="onClick" -->
+
+
+
 ### Selector
 
 selector  | HTML usage
@@ -120,8 +132,13 @@ selector: 'app-root' by element| `<app-root></app-root>'`
 selector: [app-root] by attribute| `<div app-root><div>`
 selector: '.app-root' by class| `<div class="app-root"><div>`
 
+
+
+
 *Side note: selecting by Id won't work it's not working by Angular
 
+### Directives
+- Directives are instruction on the DOM
 
 ### Objects & Interface
 
@@ -130,14 +147,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 
+  templateUrl:
   `
     <h1>{{ name }} is {{  }} years old</h1>
     <h2>My name is {{ person.firstName }} {{person.lastName}}</h2>
   `
 
 })
-export class AppComponent { 
+export class AppComponent {
     customer:{id:number, name:string, email:string} //<- instead of type this object here we can create an interface
 
     constructor(){
@@ -159,14 +176,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 
+  templateUrl:
   `
     <h1>{{ name }} is {{  }} years old</h1>
     <h2>My name is {{ person.firstName }} {{person.lastName}}</h2>
   `
 
 })
-export class AppComponent { 
+export class AppComponent {
     customer: Customer //<- instead of type this object here we can create an interface
 
     constructor(){
@@ -178,8 +195,8 @@ export class AppComponent {
     }
 
     interface Customer { // <- interface
-        id:number, 
-        name:string, 
+        id:number,
+        name:string,
         email:string
     }
 }
@@ -189,8 +206,8 @@ Or we make a seperate file for the interface (customer.ts)
 
 ```TypeScript
 export interface Customer {
-        id:number, 
-        name:string, 
+        id:number,
+        name:string,
         email:string
 }
 ```
@@ -203,14 +220,14 @@ import { Customer } from './customer'
 
 @Component({
   selector: 'app-root',
-  templateUrl: 
+  templateUrl:
   `
     <h1>Hello Wolrd</h1>
   `
 
 })
-export class AppComponent { 
-    customer: Customer 
+export class AppComponent {
+    customer: Customer
     customers: Customer[];
 
     constructor(){
@@ -241,9 +258,9 @@ export class AppComponent {
       ]
     }
 
-   
+
 }
 
 ```
 
-#### ['Events & Forms']() 
+#### ['Events & Forms']()
