@@ -112,6 +112,17 @@ unusable | `unusable:void = undefined`
 undefined | `u: undefined = undefined`
 null | `null = null;`
 
+### Selector
+
+selector  | HTML usage
+---       | ---
+selector: 'app-root' by element| `<app-root></app-root>'`
+selector: [app-root] by attribute| `<div app-root><div>`
+selector: '.app-root' by class| `<div class="app-root"><div>`
+
+*Side note: selecting by Id won't work it's not working by Angular
+
+
 ### Objects & Interface
 
 ```TypeScript
