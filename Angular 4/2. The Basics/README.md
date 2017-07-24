@@ -1,4 +1,4 @@
-# Components
+# The Basics of Angular 4
 
 
 ## Introduction
@@ -143,6 +143,27 @@ selector: '.app-root' by class| `<div class="app-root"><div>`
 
 ### Directives
 - Directives are instruction on the DOM
+
+### *ngIf
+- The star is required because ngIf is a structural directive which means it changes the structure of the DOM, it either add this parituclar element or remove it.
+- Between the quotation is must be an experssion returing either ture or false, it could be a method or an experssion returning false or ture.
+
+experssion
+```
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+```
+or method
+```
+<p *ngIf="serverCreated()"></p>
+```
+- Enhancing ngIf with Else condition by add placing local referrence 
+```
+<p *ngIf="serverCreated; else noServer"></p>
+<ng-template #noServer>
+  <p>No Server was created</p>
+</ng-template>
+```
+### *ngFor
 
 ### Objects & Interface
 
