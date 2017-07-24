@@ -117,10 +117,14 @@ null | `null = null;`
 <img src="dataBinding.png" style=""/>
 
 - [(ngModel)]="property" two way dataBinding
-<!-- Make Sure to import {FormsModule} from '@angular/forms'; -->
+```
+Make Sure to import {FormsModule} from '@angular/forms';
+```
 - {{  }} string Interpolation
 - (event)="" Events binding
-<!-- ex (click)="onClick" -->
+```
+(click)="onClick"
+```
 
 
 
