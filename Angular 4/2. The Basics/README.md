@@ -141,29 +141,87 @@ selector: '.app-root' by class| `<div class="app-root"><div>`
 
 *Side note: selecting by Id won't work it's not working by Angular
 
-### Directives
+### Angular Built-in Directives
 - Directives are instruction on the DOM
-
-### *ngIf
 - The star is required because ngIf is a structural directive which means it changes the structure of the DOM, it either add this parituclar element or remove it.
+
+#### *ngIf
+- it is a structural directives that removes or recreate portion of DOM tree based on an expression.
+- Lets say we want to display a list of products if there are actually list of products, the code goes like this:
+```html
+<div class="table-responsive">
+  <table class="table" *ngIf='products && products.length'>
+  <thead>....
+  </theadd>
+  <tbody>....
+  </tbody>
+  </table>
+</div>
+```
 - Between the quotation is must be an experssion returing either ture or false, it could be a method or an experssion returning false or ture.
 
 experssion
-```
+```html
 <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
 ```
 or method
-```
+```html
 <p *ngIf="serverCreated()"></p>
 ```
 - Enhancing ngIf with Else condition by add placing local referrence 
-```
+```html
 <p *ngIf="serverCreated; else noServer"></p>
 <ng-template #noServer>
   <p>No Server was created</p>
 </ng-template>
 ```
-### *ngFor
+- another example
+```html
+<p *ngIf="serverCreated; else noServer"></p>
+<ng-template #noServer>
+  <p>No Server was created</p>
+</ng-template>
+```
+#### *ngFor
+##### for..of vs for...in
+```javascript
+let nicknames=['di','boo','punkeye'];
+```
+- for..of
+Iterates over interable objects, such as an array.
+```javascript
+for (let nickname of nicknames){
+  console.log(nickname);
+}
+// output: di, boo, punkeye
+```
+- for..in
+Iterates over properties objects, such as an array.
+```javascript
+for (let nickname in nicknames){
+  console.log(nickname);
+}
+// output: 0, 1, 1
+```
+
+side note: in as iterating the index
+
+
+```html
+<tbody *ngFor="let product of products">
+  <td> {{product.productName}} </td>
+  <td> {{product.productCode}} </td>
+  <td> {{product.releaseDate}} </td>
+  <td> {{product.price}} </td>
+  <td> {{product.starRating}} </td>
+</tbody>
+<ng-template #noServer>
+  <p>No Server was created</p>
+</ng-template>
+```
+
+#### *ngStyle
+#### *ngClass
 
 ### Objects & Interface
 
